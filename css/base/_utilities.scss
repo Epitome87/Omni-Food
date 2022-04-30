@@ -1,0 +1,68 @@
+$base: 1rem;
+
+/* These functions will create utility classes for margin and padding for us, such as py-4, mb-8
+*/
+
+$sizes: (
+  '1': $base * 0.25,
+  '2': $base * 0.5,
+  '3': $base * 0.75,
+  '4': $base * 1,
+  '5': $base * 1.25,
+  '6': $base * 1.5,
+  '7': $base * 1.75,
+  '8': $base * 2,
+  '9': $base * 2.25,
+  '10': $base * 2.5,
+  '11': $base * 2.75,
+  '12': $base * 3,
+  '13': $base * 3.25,
+  '14': $base * 3.5,
+  '15': $base * 3.75,
+  '16': $base * 4,
+);
+
+$directions: (
+  'x': 'inline',
+  'y': 'block',
+  'l': 'inline-start',
+  'r': 'inline-end',
+  't': 'block-start',
+  'b': 'block-end',
+);
+
+@each $size, $sizeValue in $sizes {
+  .p {
+    &-#{$size} {
+      padding: $sizeValue;
+    }
+
+    @each $direction, $directionValue in $directions {
+      &#{$direction}-#{$size} {
+        padding-#{$directionValue}: $sizeValue;
+      }
+    }
+  }
+
+  .m {
+    &-#{$size} {
+      margin: $sizeValue;
+    }
+
+    @each $direction, $directionValue in $directions {
+      &#{$direction}-#{$size} {
+        margin-#{$directionValue}: $sizeValue;
+      }
+    }
+  }
+}
+
+/* This function will create utility classes for display-related properties for us */
+
+$displays: block, none, inline, inline-block, flex, grid;
+
+@each $display in $displays {
+  .#{$display} {
+    display: $display;
+  }
+}

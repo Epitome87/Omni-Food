@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+@function rem($pixel) {
+  // The '/' operator for Sass no longer works -- use built-in math module
+  // If $pixel has a unit, throw an error
+  // Otherwise, divide $pixel by 16 to return rems
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Rem should be passed a unit-less number of pixels';
+  }
+}
+
+@function em($pixel) {
+  // The '/' operator for Sass no longer works -- use built-in math module
+  // If $pixel has a unit, throw an error
+  // Otherwise, divide $pixel by 16 to return ems
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + em;
+  } @else {
+    @error 'Em should be passed a unit-less number of pixels';
+  }
+}

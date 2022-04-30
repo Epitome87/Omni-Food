@@ -1,0 +1,25 @@
+@use '../abstracts' as a;
+
+.section--hero {
+  background-color: #f2f2e9;
+  padding-block: 6rem;
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+  align-items: center;
+  width: min(100% - 2rem, 81.25rem);
+  margin: 0 auto;
+
+  @include a.breakpoint(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.hero__description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}

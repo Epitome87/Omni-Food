@@ -1,0 +1,30 @@
+$breakpoints-up: (
+  md: 43.75em,
+  lg: 56.25em,
+  xl: 90em,
+);
+
+// 0.2px difference with breakpoints above -- this seems ideal
+$breakpoints-down: (
+  sm: 43.7485em,
+  md: 56.24875em,
+  lg: 89.99875em,
+);
+
+// Mixin for media queries -- mobile-first
+@mixin breakpoint($size) {
+  $breakpoint-value: map-get($breakpoints-up, $size);
+
+  @media screen and (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+// Mixin for media queries -- desktop-first
+@mixin breakpoint-down($size) {
+  $breakpoint-value: map-get($breakpoints-down, $size);
+
+  @media screen and (max-width: $breakpoint-value) {
+    @content;
+  }
+}
