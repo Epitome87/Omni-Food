@@ -1,5 +1,7 @@
 @use '../abstracts' as a;
 
+// Section - Hero
+// TODO: Hero Buttons could be spaced less vertically on mobile
 .section--hero {
   background-color: #f2f2e9;
   padding-block: 6rem;
@@ -22,4 +24,31 @@
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 3rem;
+}
+
+// Section - Featured In
+// TODO: Logos could be handled more elegantly rather than just wrapping
+.section--featured {
+  padding-block: 3rem;
+}
+
+.featured-logos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.featured-logos > img {
+  height: 1.25rem;
+  filter: brightness(0%) opacity(50%);
+
+  @include a.breakpoint(lg) {
+    height: 2rem;
+  }
+}
+
+// Section - How it Works
+.section--how {
+  padding-block: a.rem(96);
 }
