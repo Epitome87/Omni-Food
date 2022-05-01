@@ -1,14 +1,23 @@
 $breakpoints-up: (
-  md: 43.75em,
-  lg: 56.25em,
-  xl: 90em,
+  // 560px -- Tailwind uses 640px
+  sm: 35em,
+  // 768px
+  md: 48em,
+  // 1024px
+  lg: 64em,
+  // 1,280px
+  xl: 80em,
+  // 1536px
+  2xl: 96em
 );
 
 // 0.2px difference with breakpoints above -- this seems ideal
 $breakpoints-down: (
-  sm: 43.7485em,
-  md: 56.24875em,
-  lg: 89.99875em,
+  xs: 34.9875em,
+  sm: 47.9875em,
+  md: 63.9875em,
+  lg: 79.9875em,
+  xl: 95.9875em,
 );
 
 // Mixin for media queries -- mobile-first
