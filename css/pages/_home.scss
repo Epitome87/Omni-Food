@@ -60,19 +60,22 @@
   // TODO: Easier way to make responsive
   // TODO: Perhaps don't use a "re-usable" Grid class!
   .grid {
-    @include a.breakpoint(md) {
+    gap: 1.5rem;
+
+    @include a.breakpoint(sm) {
       grid-template-columns: repeat(2, 1fr);
     }
 
     @include a.breakpoint(lg) {
       grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
     }
 
     > :last-child {
       grid-row: 3;
       justify-self: center;
 
-      @include a.breakpoint(md) {
+      @include a.breakpoint(sm) {
         grid-row: 2;
         grid-column: 1 / span 2;
       }
@@ -80,6 +83,7 @@
       @include a.breakpoint(lg) {
         grid-row: 1;
         grid-column-start: 3;
+        justify-self: auto;
       }
     }
   }
@@ -89,4 +93,70 @@
 .all-recipes {
   font-size: 1.125rem;
   text-align: center;
+}
+
+// Section - Testimonials
+.section--testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  background-color: a.$color-grey-1;
+
+  // Testimonials left half, gallery right half on lg
+  @include a.breakpoint(lg) {
+    grid-template-columns: 55fr 45fr;
+  }
+}
+
+// Padding around only Testimonials -- NOT Gallery
+.testimonials__container {
+  padding: 4.8rem 1.6rem;
+
+  // Add more padding at lg
+  @include a.breakpoint(xl) {
+    padding: 6rem;
+  }
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 5rem;
+  row-gap: 3rem;
+
+  @include a.breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.testimonials__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+
+  @include a.breakpoint(md) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include a.breakpoint(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include a.breakpoint(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-item {
+  // So when we enlarge the img on hover, the contents don't bleed out
+  overflow: hidden;
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+
+  img {
+    transition: 0.3s ease-in-out;
+  }
 }
