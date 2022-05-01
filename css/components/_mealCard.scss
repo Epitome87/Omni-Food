@@ -1,0 +1,78 @@
+.meal {
+  border-radius: 0.625rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.075);
+
+  // Image covers up top rounded borders -- hide it
+  overflow: hidden;
+
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-1rem);
+  }
+
+  &__content {
+    padding: 2rem 3rem 3rem;
+  }
+
+  &__tags {
+    margin-bottom: 0.75rem;
+  }
+
+  &__tag {
+    display: inline-block;
+    color: #333;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    text-transform: uppercase;
+    border-radius: 10rem;
+
+    // This helps make the text look more centered around the vertical padding
+    line-height: 0.75;
+
+    &:not(:last-child) {
+      margin-right: 0.25rem;
+    }
+
+    &--paleo {
+      background-color: #ffd43b;
+    }
+
+    &--vegan {
+      background-color: #94d82d;
+    }
+
+    &--vegetarian {
+      background-color: #51cf66;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  &__attributes {
+    list-style-type: none;
+  }
+
+  &__attribute {
+    // Flex so we can easily align vertically with the icon
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.125rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: #e67e22;
+  }
+}

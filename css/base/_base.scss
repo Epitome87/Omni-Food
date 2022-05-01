@@ -29,3 +29,8 @@ select,
 textarea {
   font-family: inherit;
 }
+
+// Default strong tags are TOO strong!
+strong {
+  font-weight: 500;
+}
