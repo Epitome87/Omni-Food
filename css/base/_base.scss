@@ -1,3 +1,5 @@
+@use '../abstracts/' as a;
+
 *,
 *::before,
 *::after {
@@ -15,7 +17,7 @@ body {
   font-family: 'Rubik', sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: #555;
+  color: a.$color-grey-5;
 }
 
 img {
@@ -33,4 +35,23 @@ textarea {
 // Default strong tags are TOO strong!
 strong {
   font-weight: 500;
+}
+
+// TODO: Should this be a Component?
+.link {
+  &:link,
+  &:visited {
+    display: inline-block;
+    color: a.$color-primary-5;
+    border-bottom: 2px solid a.$color-primary-5;
+    padding-bottom: 3px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  // TODO: This transition doesn't look good!
+  &:hover,
+  &:active {
+    border-bottom-color: transparent;
+  }
 }

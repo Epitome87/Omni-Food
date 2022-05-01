@@ -1,14 +1,18 @@
+@use '../abstracts/' as a;
+
 .meal {
   border-radius: 0.625rem;
-  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.075);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.12);
 
   // Image covers up top rounded borders -- hide it
   overflow: hidden;
 
-  transition: transform 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  transition-property: box-shadow, transform;
 
   &:hover {
-    transform: translateY(-1rem);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
+    transform: translateY(-0.75rem);
   }
 
   &__content {
@@ -21,10 +25,10 @@
 
   &__tag {
     display: inline-block;
-    color: #333;
+    color: a.$color-grey-7;
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.25rem 0.5rem;
+    padding: 0.3rem 0.6rem;
     text-transform: uppercase;
     border-radius: 10rem;
 
@@ -49,8 +53,8 @@
   }
 
   &__title {
+    color: a.$color-grey-7;
     font-size: 1.5rem;
-    color: #333;
     font-weight: 600;
     margin-bottom: 2rem;
   }
@@ -73,6 +77,6 @@
 
   &__icon {
     font-size: 1.5rem;
-    color: #e67e22;
+    color: a.$color-primary-5;
   }
 }

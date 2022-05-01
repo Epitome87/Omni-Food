@@ -56,4 +56,37 @@
 // Section - Meals
 .section--meals {
   padding-block: 6rem;
+
+  // TODO: Easier way to make responsive
+  // TODO: Perhaps don't use a "re-usable" Grid class!
+  .grid {
+    @include a.breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include a.breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    > :last-child {
+      grid-row: 3;
+      justify-self: center;
+
+      @include a.breakpoint(md) {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+      }
+
+      @include a.breakpoint(lg) {
+        grid-row: 1;
+        grid-column-start: 3;
+      }
+    }
+  }
+}
+
+// Section - Diets
+.all-recipes {
+  font-size: 1.125rem;
+  text-align: center;
 }

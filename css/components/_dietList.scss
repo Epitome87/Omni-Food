@@ -1,0 +1,24 @@
+@use '../abstracts/' as a;
+
+.diets {
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+}
+
+.diet__icon {
+  color: a.$color-primary-5;
+  font-size: 1.875rem;
+}

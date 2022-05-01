@@ -1,3 +1,5 @@
+@use '../abstracts/' as a;
+
 // .button is actually an anchor tag
 .button:link,
 .button:visited {
@@ -7,29 +9,29 @@
   padding: 1rem 2rem;
   border-radius: 0.75rem;
   text-decoration: none;
-  transition: background-color 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .button--primary:link,
 .button--primary:visited {
-  background-color: #e67e22;
+  background-color: a.$color-primary-5;
   color: #fff;
 
   &:hover,
   &:active {
-    background-color: #cf711f;
+    background-color: a.$color-primary-6;
   }
 }
 
 .button--secondary:link,
 .button--secondary:visited {
   background-color: #fff;
-  color: #555;
+  color: a.$color-grey-5;
   border: 3px solid transparent;
 
   &:hover,
   &:active {
-    background-color: #fdf2e9;
+    background-color: a.$color-grey-1;
     border-color: #fff;
   }
 }

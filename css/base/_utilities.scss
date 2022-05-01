@@ -66,3 +66,22 @@ $displays: block, none, inline, inline-block, flex, grid;
     display: $display;
   }
 }
+
+// Text Utilities
+// TODO: Should these go in Typography.scss?
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
