@@ -53,6 +53,67 @@
   padding-block: 6rem;
 }
 
+.steps__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 4rem;
+  row-gap: 6rem;
+  justify-items: center;
+  align-items: center;
+
+  @include a.breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step__number {
+    color: a.$color-grey-2;
+    font-size: 5.375rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .step__description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .step__image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+    &::before {
+      background-color: #fae5d3;
+      width: 55%;
+      z-index: -1;
+    }
+
+    &::after {
+      background-color: #fdf2e9;
+      width: 75%;
+      z-index: -2;
+    }
+
+    img {
+      width: 45%;
+      transition: 0.3s ease-in-out;
+      filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+
+      &:hover {
+        transform: scale(1.05) rotate(5deg);
+      }
+    }
+  }
+}
+
 // Section - Meals
 .section--meals {
   padding-block: 6rem;
