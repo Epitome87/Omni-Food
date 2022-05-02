@@ -221,3 +221,183 @@
     transition: 0.3s ease-in-out;
   }
 }
+
+// Section - Pricing
+.section--pricing {
+  padding-block: 6rem;
+}
+
+// Pricing Cards
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;
+  row-gap: 3rem;
+  margin-bottom: 3rem;
+
+  @include a.breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include a.breakpoint(md) {
+    gap: 5rem;
+  }
+}
+
+// TODO: Font could be smaller on medium 2-column layout
+.pricing-plan {
+  border-radius: 0.6875rem;
+  padding: 3rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+  @include a.breakpoint(lg) {
+    width: 75%;
+  }
+
+  &--starter {
+    outline: 2px solid a.$color-grey-1;
+
+    @include a.breakpoint(lg) {
+      justify-self: right;
+    }
+  }
+
+  &--complete {
+    position: relative;
+    background-color: a.$color-grey-1;
+    overflow: hidden;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.3);
+
+    // TODO: This breaks on small sizes
+    &::after {
+      content: 'BEST VALUE';
+      display: block;
+      position: absolute;
+      top: 5%;
+      right: -8%;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: a.$color-grey-7;
+      padding: 0.5rem 2.5rem;
+      transform: rotate(45deg);
+      background: linear-gradient(-45deg, #ffd43b, a.$color-primary-5);
+      background-size: 200% 200%;
+      animation: gradient 6s ease infinite;
+    }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// TODO: plan is not actually a class: Just using it for organization -- is this bad?!
+.plan {
+  // Header holds name, price, text
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__name {
+    color: a.$color-primary-6;
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.75;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  &__price {
+    color: a.$color-grey-7;
+    font-size: 3.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    & span {
+      font-size: 1.875rem;
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__text {
+    color: a.$color-grey-3;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &__list {
+    list-style-type: none;
+
+    .list-item {
+      font-size: 1.125rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .list-icon {
+      color: a.$color-primary-5;
+      font-size: 1.875rem;
+    }
+  }
+
+  &__details {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+}
+
+// Feature sub-section
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+  row-gap: 3rem;
+
+  @include a.breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include a.breakpoint(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.feature {
+  &__icon {
+    font-size: 2rem;
+    color: a.$color-primary-5;
+    background-color: a.$color-grey-1;
+    border-radius: 50%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: a.$color-grey-7;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}
