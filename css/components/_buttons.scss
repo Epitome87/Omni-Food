@@ -8,6 +8,7 @@
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 0.75rem;
+  text-align: center;
   text-decoration: none;
   transition: 0.3s ease-in-out;
 }
@@ -34,4 +35,17 @@
     background-color: a.$color-grey-1;
     border-color: #fff;
   }
+}
+
+.button--form:link,
+.button--form:visited {
+    background-color: #45260a;
+    color: a.$color-grey-1;
+    padding: 0.8rem;
+
+    &:hover,
+    &:active {
+      background-color: #fff;
+      color: #45260a;
+    }
 }
