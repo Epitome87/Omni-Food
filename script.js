@@ -25,23 +25,27 @@ function createObserver() {
   let options = {
     root: null,
     rootMargin: '0px',
-    thresholds: '50px',
+    threshold: [0.33, 0.66, 1.0],
   };
 
   const observer = new IntersectionObserver(handleIntersect, options);
 
   revealElements.forEach((revealElement) => observer.observe(revealElement));
 }
-
-let prevRatio = 0.0;
-
 function handleIntersect(entries, observer) {
   entries.forEach((entry) => {
-    if (entry.intersectionRatio <= 0) {
-      // Do this if we want the animation to occur EVERY time in view
-      // entry.target.classList.remove('active');
-    } else {
-      entry.target.classList.add('active');
+    //   // <= 0
+    //   if (entry.intersectionRatio <= 0.5) {
+    //     // Do this if we want the animation to occur EVERY time in view
+    //     // entry.target.classList.remove('active');
+    //   } else {
+    //     entry.target.classList.add('active');
+    //   }
+    // });
+    if (entry.isIntersecting) {
+      if (entry.intersectionRatio >= 0.3) {
+        entry.target.classList.add('active');
+      }
     }
   });
 }
