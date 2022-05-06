@@ -5,6 +5,11 @@
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+  justify-content: center;
+
+  @include a.breakpoint(lg) {
+    justify-content: start;
+  }
 }
 
 .delivered-images {

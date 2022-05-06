@@ -8,9 +8,14 @@
   padding: 0;
 }
 
+*:focus {
+  outline: 0.2rem solid #e67e22;
+}
+
 html {
   box-sizing: border-box;
-  font-size: 100%;
+  // font-size: 100%;
+  font-size: 80%;
   scroll-behavior: smooth;
 }
 
@@ -19,6 +24,7 @@ body {
   line-height: 1;
   font-weight: 400;
   color: a.$color-grey-5;
+  overflow-x: hidden;
 }
 
 img {
@@ -60,4 +66,10 @@ strong {
 
 blockquote {
   quotes: '' '';
+}
+
+@include a.breakpoint(xl) {
+  html {
+    font-size: 100%;
+  }
 }

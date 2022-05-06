@@ -1,8 +1,15 @@
+@use '../abstracts/' as a;
+
 .grid {
   display: grid;
-  column-gap: 6rem;
+  column-gap: 3rem;
   row-gap: 4rem;
   grid-template-columns: 1fr;
+
+  @include a.breakpoint(lg) {
+    column-gap: 4rem;
+    row-gap: 6rem;
+  }
 }
 
 .grid--2-cols {

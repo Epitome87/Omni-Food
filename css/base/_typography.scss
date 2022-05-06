@@ -24,7 +24,8 @@
 }
 
 .heading--tertiary {
-  font-size: 1.875rem;
+  // 1.5em to 1.875rem on a 48em-120em viewport
+  font-size: clamp(1.8rem, calc(1.8rem + ((1vw - 0.48rem) * 0.1042)), 1.875rem);
   line-height: 1.2;
   margin-bottom: 2rem;
 }

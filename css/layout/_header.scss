@@ -1,52 +1,113 @@
 @use '../abstracts' as a;
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  padding-inline: 3rem;
+  background-color: a.$color-grey-1;
+  color: a.$color-grey-7;
+
+  img {
+    height: 1.375rem;
+  }
+
+  .main-nav {
+    // Hide nav when not active, visuals and interactivity
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 6rem;
-    padding-inline: 3rem;
-    background-color: a.$color-grey-1;
+    justify-content: center;
+    transition: 0.5s ease-in;
+
+    @include a.breakpoint(md) {
+      // Undo all the mobile nav properties
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      position: static;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      list-style-type: none;
+
+      @include a.breakpoint(md) {
+        flex-direction: row;
+        gap: 3rem;
+      }
+    }
+
+    &__link:link,
+    &__link:visited {
+      display: inline-block;
+      color: inherit;
+      font-size: 1.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+
+      @include a.breakpoint(md) {
+        font-size: 1.125rem;
+      }
+    }
+
+    &__link:hover,
+    &__link:active {
+      color: a.$color-primary-5;
+    }
+
+    &__link.nav-cta:link,
+    &__link.nav-cta:visited {
+      background-color: a.$color-primary-5;
+      color: #fff;
+      border-radius: 0.5625rem;
+      padding: 0.75rem 1.5rem;
+    }
+
+    &__link.nav-cta:hover,
+    &__link.nav-cta:active {
+      background-color: a.$color-primary-6;
+    }
+  }
+
+  .icon--mobile-nav {
+    font-size: 3rem;
     color: a.$color-grey-7;
+  }
+}
 
-    img {
-        height: 1.375rem;
-    }
+// Is mobile navigation open?
+.nav-open .main-nav {
+  // Un-hide nav
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
+}
 
-    .main-nav {
-        &__list {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            list-style-type: none;
-        }
+.nav-open .icon--mobile-nav[name='close-outline'] {
+  display: block;
+}
 
-        &__link:link, &__link:visited {
-            display: inline-block;
-            color: inherit;
-            font-size: 1.125rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: 0.3s ease-in-out;
-        }
-
-        &__link:hover, &__link:active {
-            color: a.$color-primary-5;
-        }
-
-        &__link.nav-cta:link, 
-        &__link.nav-cta:visited {
-            background-color: a.$color-primary-5;
-            color: #fff;
-            border-radius: 0.5625rem;
-            padding: 0.75rem 1.5rem;
-        }
-
-        &__link.nav-cta:hover, 
-        &__link.nav-cta:active {
-            background-color: a.$color-primary-6;
-        }
-    }
-
-
+.nav-open .icon--mobile-nav[name='menu-outline'] {
+  display: none;
 }

@@ -1,0 +1,42 @@
+@use '../abstracts/' as a;
+
+.cta__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+
+  @include a.breakpoint(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+
+  label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  input,
+  select {
+    display: block;
+    width: 100%;
+    background-color: a.$color-grey-1;
+    color: inherit;
+    font-size: 1.125rem;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.5625rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  input::placeholder {
+    color: #aaa;
+  }
+
+  *:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.4rem rgba(253, 242, 233, 0.5);
+  }
+}

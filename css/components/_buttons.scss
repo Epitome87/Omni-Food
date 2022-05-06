@@ -1,6 +1,7 @@
 @use '../abstracts/' as a;
 
 // .button is actually an anchor tag
+.button,
 .button:link,
 .button:visited {
   display: inline-block;
@@ -37,15 +38,37 @@
   }
 }
 
-.button--form:link,
-.button--form:visited {
-    background-color: #45260a;
-    color: a.$color-grey-1;
-    padding: 0.8rem;
+.button--form {
+  border: none;
+  cursor: pointer;
+  background-color: #45260a;
+  color: a.$color-grey-1;
+  padding: 0.75rem;
+  align-self: end;
+  margin-top: 0.6rem;
 
-    &:hover,
-    &:active {
-      background-color: #fff;
-      color: #45260a;
-    }
+  @include a.breakpoint(lg) {
+    margin-top: 0;
+  }
+
+  &:hover,
+  &:active {
+    background-color: #fff;
+    color: #45260a;
+  }
+}
+
+.button--mobile-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+
+  @include a.breakpoint(md) {
+    display: none;
+  }
+
+  [name='close-outline'] {
+    display: none;
+  }
 }
