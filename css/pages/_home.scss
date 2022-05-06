@@ -1,7 +1,8 @@
 @use '../abstracts' as a;
 
 .reveal {
-  position: relative;
+  // TODO: Is position: relative is necessary?
+  // position: relative;
   opacity: 0;
 }
 .reveal.active {
@@ -21,7 +22,7 @@
 }
 @keyframes fade-top {
   0% {
-    transform: translateY(-50px);
+    transform: translateY(-100px);
     opacity: 0;
   }
   100% {
