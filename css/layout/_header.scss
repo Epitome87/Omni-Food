@@ -1,6 +1,11 @@
 @use '../abstracts' as a;
 
 .header {
+  // Make header stick to top
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: space-between;

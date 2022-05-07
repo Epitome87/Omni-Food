@@ -44,7 +44,7 @@
       <!-- Section: Hero -->
       <section class="section section--hero">
         <div class="hero__container">
-          <div class="hero__text-container reveal fade-left">
+          <div class="hero__text-container">
             <h1 class="heading--primary">A healthy meal delivered to your door, every single day</h1>
             <p class="hero__description">
               The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your
@@ -64,7 +64,7 @@
               <p class="delivered-text"><span>250,000+ </span>meals delivered last year!</p>
             </div>
           </div>
-          <div class="hero__image-container reveal fade-right">
+          <div class="hero__image-container">
             <img src="images/hero.png" alt="Delicious food on table" />
           </div>
         </div>
@@ -72,7 +72,7 @@
 
       <!-- Section: Featured-In -->
       <section class="section section--featured">
-        <div class="container reveal fade-bottom">
+        <div class="container reveal">
           <h2 class="heading--featured-in">As featured in</h2>
           <div class="featured-logos">
             <img src="images/logos/business-insider.png" alt="Business Insider Logo" />
@@ -86,7 +86,7 @@
 
       <!-- Section: How it Works -->
       <section class="section section--how grid" id="how">
-        <div class="container reveal fade-left">
+        <div class="container">
           <span class="subheading">How it works</span>
           <h2 class="heading--secondary">Your daily dose of health in 3 simple steps</h2>
         </div>
@@ -134,13 +134,13 @@
 
       <!-- Section: Meals -->
       <section class="section section--meals" id="meals">
-        <div class="container text-center reveal fade-left">
+        <div class="container text-center">
           <span class="subheading">Meals</span>
           <h2 class="heading--secondary">Omnifood AI chooses from 5,000+ recipes</h2>
         </div>
 
         <div class="container grid grid--1-cols mb-12">
-          <div class="meal reveal fade-left">
+          <div class="meal">
             <img src="images/meals/meal-1.jpg" alt="Japanesse Gyozas" />
             <div class="meal__content">
               <div class="meal__tags">
@@ -163,7 +163,7 @@
               </ul>
             </div>
           </div>
-          <div class="meal reveal fade-left">
+          <div class="meal">
             <img src="images/meals/meal-2.jpg" alt="Avocado Salad" />
             <div class="meal__content">
               <div class="meal__tags">
@@ -229,10 +229,10 @@
       <!-- Section: Testimonials -->
       <section class="section section--testimonials" id="testimonials">
         <div class="testimonials__container">
-          <span class="subheading reveal fade-left">Testimonials</span>
-          <h2 class="heading--secondary reveal fade-left">Once you try it, you can't go back</h2>
+          <span class="subheading">Testimonials</span>
+          <h2 class="heading--secondary">Once you try it, you can't go back</h2>
           <div class="testimonials">
-            <figure class="testimonial reveal fade-left">
+            <figure class="testimonial">
               <img src="images/customers/dave.jpg" alt="" />
               <blockquote class="testimonial__text">
                 Inexpensive, healthy, and great-tasting meals, without even having to order manually! It feels truly
@@ -240,7 +240,7 @@
               </blockquote>
               <p class="testimonial__name">&mdash; Dave Bryson</p>
             </figure>
-            <figure class="testimonial reveal fade-left">
+            <figure class="testimonial">
               <img src="images/customers/ben.jpg" alt="" />
               <blockquote class="testimonial__text">
                 "Inexpensive, healthy, and great-tasting meals, without even having to order manually! It feels truly
@@ -248,7 +248,7 @@
               </blockquote>
               <p class="testimonial__name">&mdash; Ben Hadley</p>
             </figure>
-            <figure class="testimonial reveal fade-left">
+            <figure class="testimonial">
               <img src="images/customers/steve.jpg" alt="" />
               <blockquote class="testimonial__text">
                 "Inexpensive, healthy, and great-tasting meals, without even having to order manually! It feels truly
@@ -256,7 +256,7 @@
               </blockquote>
               <p class="testimonial__name">&mdash; Steve Miller</p>
             </figure>
-            <figure class="testimonial reveal fade-left">
+            <figure class="testimonial">
               <img src="images/customers/hannah.jpg" alt="" />
               <blockquote class="testimonial__text">
                 "Inexpensive, healthy, and great-tasting meals, without even having to order manually! It feels truly
@@ -266,7 +266,7 @@
             </figure>
           </div>
         </div>
-        <div class="testimonials__gallery reveal fade-right">
+        <div class="testimonials__gallery">
           <figure class="gallery-item">
             <img src="images/gallery//gallery-1.jpg" alt="" />
           </figure>
@@ -308,7 +308,7 @@
 
       <!-- Section: Pricing -->
       <section class="section section--pricing" id="pricing">
-        <div class="container reveal fade-left">
+        <div class="container reveal">
           <span class="subheading">Pricing</span>
           <h2 class="heading--secondary">Eating well without breaking the bank</h2>
         </div>
@@ -327,9 +327,10 @@
                 <ion-icon class="diet__icon" name="checkmark-outline"></ion-icon><span>Order from 11am to 9pm</span>
               </li>
               <li class="list-item">
-                <ion-icon class="diet__icon" name="checkmark-outline"></ion-icon><span>Delivery is free</span>
+                <ion-icon class="diet__icon" name="checkmark-outline"></ion-icon
+                ><span>Delivery is <strong>free</strong></span>
               </li>
-              <li class="list-item"><ion-icon class="diet__icon" name="close-outline"></ion-icon></li>
+              <!-- <li class="list-item"><ion-icon class="diet__icon" name="close-outline"></ion-icon></li> -->
             </ul>
             <div class="plan__signup text-center">
               <a href="#" class="button button--primary">Start eating well</a>
@@ -338,7 +339,7 @@
           <div class="pricing-plan pricing-plan--complete reveal fade-right">
             <header class="plan__header">
               <p class="plan__name">Complete</p>
-              <p class="plan__price"><span>$</span>399</p>
+              <p class="plan__price"><span>$</span>649</p>
               <p class="plan__text">per month. That's just $11 per meal!</p>
             </header>
             <ul class="plan__list mb-12">
@@ -351,7 +352,8 @@
                 ><span>Order <strong>24/7</strong></span>
               </li>
               <li class="list-item">
-                <ion-icon class="diet__icon" name="checkmark-outline"></ion-icon><span>Delivery is free</span>
+                <ion-icon class="diet__icon" name="checkmark-outline"></ion-icon
+                ><span>Delivery is <strong>free</strong></span>
               </li>
               <li class="list-item">
                 <ion-icon class="diet__icon" name="checkmark-outline"></ion-icon
@@ -366,23 +368,23 @@
         <aside class="plan__details reveal fade-bottom">
           Prices include all applicable taxes. You can cancel at any time. Both plans include the following:
         </aside>
-        <div class="container feature-grid reveal fade-bottom">
-          <div class="feature reveal fade-left">
+        <div class="container feature-grid">
+          <div class="feature">
             <ion-icon name="infinite-outline" class="feature__icon"></ion-icon>
             <p class="feature__title">Never cook again!</p>
             <p class="feature__text">Our subscriptions cover 365 days per year, even including major holidays.</p>
           </div>
-          <div class="feature reveal fade-left">
+          <div class="feature">
             <ion-icon name="nutrition-outline" class="feature__icon"></ion-icon>
             <p class="feature__title">Local and organic</p>
             <p class="feature__text">Our cooks only use local, fresh, and organic products to prepare your meals.</p>
           </div>
-          <div class="feature reveal fade-right">
+          <div class="feature">
             <ion-icon name="leaf-outline" class="feature__icon"></ion-icon>
             <p class="feature__title">No waste</p>
             <p class="feature__text">All our partners only use reusable containers to package all your meals..</p>
           </div>
-          <div class="feature reveal fade-right">
+          <div class="feature">
             <ion-icon name="pause-outline" class="feature__icon"></ion-icon>
             <p class="feature__title">Pause anytime</p>
             <p class="feature__text">Going on vacation? Just pause your subscription, and we refund unused days.</p>
@@ -393,7 +395,7 @@
       <!-- Section: Call-to-Action! -->
       <section class="section section--cta" id="cta">
         <div class="container">
-          <div class="cta reveal fade-bottom">
+          <div class="cta">
             <div class="image-container" role="img" aria-label="Woman enjoying Omnifood"></div>
             <div class="text-container">
               <h2 class="heading--secondary">Get your first meal for free!</h2>

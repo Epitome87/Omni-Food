@@ -378,6 +378,8 @@
 .pricing-grid {
   display: grid;
   grid-template-columns: 1fr;
+  // We want both cards equal height, even if they are vertically aligned
+  grid-auto-rows: 1fr;
   column-gap: 3rem;
   row-gap: 4rem;
   margin-bottom: 3rem;
@@ -397,6 +399,17 @@
   border-radius: 0.6875rem;
   padding: 3rem;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+  // TODO:
+  display: flex;
+  flex-direction: column;
+
+  > :last-child {
+    // TODO: Why isn't this working?
+    // justify-self: flex-end;
+    // This works, though!
+    margin-top: auto;
+  }
 
   @include a.breakpoint(lg) {
     width: 75%;
